@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlantCompanion.MainPage"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#FAFCF8">
+             BackgroundColor="#1E4620">
 
     <Grid>
-        <!-- Premium gradient background with layered design -->
-        <BoxView VerticalOptions="Start" 
-                 HeightRequest="400"
+        <!-- Full page gradient background -->
+        <BoxView VerticalOptions="Fill"
                  ZIndex="0">
             <BoxView.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -17,10 +16,9 @@
                 </LinearGradientBrush>
             </BoxView.Background>
         </BoxView>
-        
-        <!-- Decorative pattern overlay -->
-        <Grid VerticalOptions="Start" 
-              HeightRequest="400" 
+
+        <!-- Decorative pattern overlay - extended to full page -->
+        <Grid VerticalOptions="Fill" 
               Opacity="0.1"
               ZIndex="0">
             <BoxView>
@@ -33,7 +31,7 @@
             </BoxView>
             <Image Source="leaf_pattern.png" Aspect="AspectFill" Opacity="0.15"/>
         </Grid>
-        
+
         <!-- Dark Overlay - IMPORTANTE: ZIndex maior que o conteúdo principal -->
         <BoxView x:Name="DarkOverlay"
                  Color="#000000"
@@ -44,7 +42,7 @@
                 <TapGestureRecognizer Tapped="OnOverlayTapped"/>
             </BoxView.GestureRecognizers>
         </BoxView>
-        
+
         <!-- Menu Hamburger - IMPORTANTE: ZIndex maior que o overlay -->
         <Grid x:Name="HamburgerMenuPanel" 
               WidthRequest="280"
@@ -52,7 +50,7 @@
               HorizontalOptions="Start"
               TranslationX="-280"
               ZIndex="99">
-            
+
             <!-- Design do cabeçalho do menu -->
             <Grid RowDefinitions="180, *">
                 <!-- Cabeçalho do Menu -->
@@ -69,27 +67,27 @@
                                 </LinearGradientBrush>
                             </BoxView.Background>
                         </BoxView>
-                        
+
                         <StackLayout Padding="20" VerticalOptions="End">
                             <Image Source="user_icon.png"
                                    HeightRequest="60"
                                    WidthRequest="60"
                                    Aspect="AspectFill"
                                    HorizontalOptions="Start"/>
-                            
-                            <Label Text="Usuário"
+
+                            <Label Text="User"
                                    TextColor="White"
                                    FontAttributes="Bold"
                                    FontSize="18"
                                    Margin="0,10,0,0"/>
-                            
+
                             <Label x:Name="UserEmailLabel"
                                    TextColor="#E0F2E9"
                                    FontSize="14"/>
                         </StackLayout>
                     </Grid>
                 </Frame>
-                
+
                 <!-- Itens do Menu -->
                 <StackLayout Grid.Row="1" Spacing="0">
                     <!-- Item do Menu: Home -->
@@ -101,22 +99,17 @@
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <Image Grid.Column="0"
-                               Source="home_icon.png"
-                               HeightRequest="24"
-                               WidthRequest="24"/>
-                        
+
                         <Label Grid.Column="1"
-                               Text="Início"
+                               Text="Home"
                                FontSize="16"
                                TextColor="#333333"
                                VerticalOptions="Center"/>
                     </Grid>
-                    
+
                     <!-- Separador -->
                     <BoxView HeightRequest="1" Color="#F0F0F0"/>
-                    
+
                     <!-- Item do Menu: Perfil -->
                     <Grid Padding="20,15" BackgroundColor="Transparent">
                         <Grid.GestureRecognizers>
@@ -126,22 +119,17 @@
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <Image Grid.Column="0"
-                               Source="profile_icon.png"
-                               HeightRequest="24"
-                               WidthRequest="24"/>
-                        
+
                         <Label Grid.Column="1"
-                               Text="Perfil"
+                               Text="Profile"
                                FontSize="16"
                                TextColor="#333333"
                                VerticalOptions="Center"/>
                     </Grid>
-                    
+
                     <!-- Separador -->
                     <BoxView HeightRequest="1" Color="#F0F0F0"/>
-                    
+
                     <!-- Item do Menu: Previsão do Tempo -->
                     <Grid Padding="20,15" BackgroundColor="Transparent">
                         <Grid.GestureRecognizers>
@@ -151,22 +139,17 @@
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <Image Grid.Column="0"
-                               Source="weather_icon.png"
-                               HeightRequest="24"
-                               WidthRequest="24"/>
-                        
+
                         <Label Grid.Column="1"
-                               Text="Previsão do Tempo"
+                               Text="Weather"
                                FontSize="16"
                                TextColor="#333333"
                                VerticalOptions="Center"/>
                     </Grid>
-                    
+
                     <!-- Separador -->
                     <BoxView HeightRequest="1" Color="#F0F0F0"/>
-                    
+
                     <!-- Item do Menu: Histórico -->
                     <Grid Padding="20,15" BackgroundColor="Transparent">
                         <Grid.GestureRecognizers>
@@ -176,24 +159,19 @@
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <Image Grid.Column="0"
-                               Source="history_icon.png"
-                               HeightRequest="24"
-                               WidthRequest="24"/>
-                        
+
                         <Label Grid.Column="1"
-                               Text="Histórico de Plantas"
+                               Text="Plant History"
                                FontSize="16"
                                TextColor="#333333"
                                VerticalOptions="Center"/>
                     </Grid>
-                    
+
                     <!-- Separador -->
                     <BoxView HeightRequest="1" Color="#F0F0F0"/>
                 </StackLayout>
             </Grid>
-            
+
             <!-- Sombra para o painel do menu -->
             <BoxView HorizontalOptions="End" 
                      WidthRequest="6" 
@@ -206,7 +184,7 @@
                 </BoxView.Background>
             </BoxView>
         </Grid>
-        
+
         <!-- Main Content -->
         <ScrollView ZIndex="1">
             <Grid RowSpacing="0" Padding="0,0,0,100">
@@ -225,62 +203,44 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    
+
                     <!-- Top Bar with Menu and Actions -->
                     <Grid Grid.Row="0" Margin="0,0,0,8">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        
+
                         <!-- Hamburger Menu Button -->
                         <Button Grid.Column="0"
-                                x:Name="MenuButton"
-                                WidthRequest="40"
-                                HeightRequest="40"
-                                CornerRadius="20"
-                                Padding="0"
-                                Margin="0,0,0,0"
-                                BackgroundColor="#3A7938"
-                                BorderColor="Transparent"
-                                Clicked="OnMenuButtonClicked">
+        x:Name="MenuButton"
+        WidthRequest="40"
+        HeightRequest="40"
+        CornerRadius="20"
+        Padding="0"
+        Margin="0,0,0,0"
+        BackgroundColor="#FFFFFF"
+        BorderColor="Transparent"
+        Clicked="OnMenuButtonClicked">
                             <Button.ImageSource>
-                                <FontImageSource FontFamily="MaterialIcons"
-                                                 Glyph="&#xe5d2;"
-                                                 Size="24"
-                                                 Color="White"/>
+                                <FileImageSource File="menu.svg" />
                             </Button.ImageSource>
                         </Button>
-                        
-                        <!-- App Name -->
+
+                        <!-- Bold Title in Center -->
                         <Label Grid.Column="1"
                                Text="PLANT COMPANION" 
-                               FontSize="12" 
+                               FontSize="25" 
                                FontAttributes="Bold"
-                               TextColor="#9FE3A0"
-                               Opacity="0.9"
+                               TextColor="White"
+                               Opacity="0.95"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
-                               CharacterSpacing="1.5" />
-                        
-                        <!-- Settings Button -->
-                        <Button Grid.Column="2"
-                                x:Name="SettingsButton"
-                                WidthRequest="40"
-                                HeightRequest="40"
-                                CornerRadius="20"
-                                Padding="0"
-                                BackgroundColor="#3A7938"
-                                BorderColor="Transparent"
-                                Clicked="OnSettingsButtonClicked">
-                            <Button.ImageSource>
-                                <FileImageSource File="settings_icon.png" />
-                            </Button.ImageSource>
-                        </Button>
+                               CharacterSpacing="1.0" />
                     </Grid>
-                           
-                    <!-- Title Area -->
+
+                    <!-- Title Area - REMOVIDO conforme solicitação -->
+                    <!--
                     <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="8" Margin="0,12,0,0">
                         <Label Text="Plant" 
                                FontSize="38" 
@@ -291,6 +251,7 @@
                                FontAttributes="None"
                                TextColor="#9FE3A0" />
                     </StackLayout>
+                    -->
                 </Grid>
 
                 <!-- Enhanced Image Card with Floating Design -->
@@ -302,14 +263,14 @@
                        HasShadow="False"
                        Background="Transparent"
                        IsClippedToBounds="True">
-                    
+
                     <!-- Enhanced shadow effect for the card -->
                     <Frame.Shadow>
                         <Shadow Brush="#40000000"
                                 Offset="0,6"
                                 Radius="24" />
                     </Frame.Shadow>
-                    
+
                     <Grid>
                         <!-- Image Display Area -->
                         <Frame BackgroundColor="White" 
@@ -347,45 +308,69 @@
                                         </DataTemplate>
                                     </CarouselView.ItemTemplate>
                                 </CarouselView>
-                                
-                                <!-- Enhanced Empty State Design -->
+
+                                <!-- Enhanced Empty State Design with Square Background -->
                                 <Grid x:Name="EmptyStateGrid"
-                                      BackgroundColor="#FAFAFA"
                                       IsVisible="True">
                                     <Grid.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Color="#F6F9F5" Offset="0.0" />
+                                            <GradientStop Color="#F4F6F4" Offset="0.0" />
                                             <GradientStop Color="#FFFFFF" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Grid.Background>
-                                    
-                                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="24">
-                                        <!-- Enhanced decorative leaf graphics -->
-                                        <Image Source="plant_icon.png" 
-                                               HeightRequest="100" 
-                                               HorizontalOptions="Center"
-                                               Opacity="0.8">
-                                            <!-- Optional subtle rotation animation -->
-                                        </Image>
-                                        
-                                        <StackLayout Spacing="10" Margin="40,0">
-                                            <Label Text="Identify Any Plant"
-                                                   FontSize="24"
-                                                   FontAttributes="Bold"
-                                                   TextColor="#315B2F"
-                                                   HorizontalOptions="Center" />
-                                                   
-                                            <Label Text="Take a clear photo or upload an existing image"
-                                                   FontSize="16"
-                                                   TextColor="#7A8379"
-                                                   HorizontalOptions="Center"
-                                                   MaxLines="2"
-                                                   LineBreakMode="WordWrap"
-                                                   HorizontalTextAlignment="Center" />
+
+                                    <!-- Square container for all content -->
+                                    <Frame BackgroundColor="#F2F4F2" 
+                                           CornerRadius="20"
+                                           Padding="30,40" 
+                                           HasShadow="False"
+                                           BorderColor="Transparent"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           MaximumWidthRequest="340">
+
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="28">
+                                            <!-- Camera icon with modern styling -->
+                                            <Frame HeightRequest="120" 
+                                                   WidthRequest="120"
+                                                   CornerRadius="60"
+                                                   Padding="0"
+                                                   HasShadow="False"
+                                                   BackgroundColor="#EAEFEA"
+                                                   HorizontalOptions="Center">
+                                                <Frame.Shadow>
+                                                    <Shadow Brush="#20000000"
+                                                            Offset="0,4"
+                                                            Radius="12" />
+                                                </Frame.Shadow>
+                                                <Image Source="cam_icon.png" 
+                                                       HeightRequest="60" 
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"
+                                                       Opacity="0.9">
+                                                </Image>
+                                            </Frame>
+
+                                            <StackLayout Spacing="12" Margin="10,0">
+                                                <!-- Title without background frame -->
+                                                <Label Text="Identify Any Plant"
+                                                       FontSize="24"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#3E4A3E"
+                                                       HorizontalOptions="Center" />
+
+                                                <Label Text="Take a clear photo or upload an existing image"
+                                                       FontSize="16"
+                                                       TextColor="#656A65"
+                                                       HorizontalOptions="Center"
+                                                       MaxLines="2"
+                                                       LineBreakMode="WordWrap"
+                                                       HorizontalTextAlignment="Center" />
+                                            </StackLayout>
                                         </StackLayout>
-                                    </StackLayout>
+                                    </Frame>
                                 </Grid>
-                                
+
                                 <!-- Enhanced indicator dots -->
                                 <IndicatorView x:Name="indicatorView"
                                                VerticalOptions="End"
@@ -408,14 +393,14 @@
                        HasShadow="False"
                        Background="White"
                        IsClippedToBounds="True">
-                    
+
                     <!-- Enhanced shadow effect -->
                     <Frame.Shadow>
                         <Shadow Brush="#15000000"
                                 Offset="0,3"
                                 Radius="12" />
                     </Frame.Shadow>
-                    
+
                     <Grid Padding="0">
                         <!-- Plant Identification Section -->
                         <Grid Padding="24">
@@ -425,21 +410,21 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            
+
                             <!-- Section Header -->
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                
+
                                 <Label Text="IDENTIFICATION" 
                                        FontSize="13" 
                                        FontAttributes="Bold"
                                        TextColor="#5A7854"
                                        CharacterSpacing="0.8"
                                        VerticalOptions="Center" />
-                                
+
                                 <Frame Grid.Column="1"
                                        BackgroundColor="#E8F5E9"
                                        CornerRadius="14"
@@ -452,7 +437,7 @@
                                            FontAttributes="Bold" />
                                 </Frame>
                             </Grid>
-                            
+
                             <!-- Plant Name (Results) -->
                             <Label Grid.Row="1"
                                    x:Name="ResultLabel" 
@@ -461,16 +446,16 @@
                                    FontAttributes="Bold"
                                    TextColor="#253624"
                                    Margin="0,12,0,8"/>
-                                   
+
                             <!-- Scientific Name -->
                             <Label Grid.Row="2"
                                    x:Name="ScientificNameLabel"
-                                   Text="Scientific name will appear here"
+
                                    FontSize="15"
                                    FontAttributes="Italic"
                                    TextColor="#939993"
                                    Margin="0,0,0,20" />
-                                   
+
                             <!-- Enhanced Separator -->
                             <BoxView Grid.Row="3"
                                      HeightRequest="1" 
@@ -479,7 +464,7 @@
                         </Grid>
                     </Grid>
                 </Frame>
-                
+
                 <!-- Enhanced Health Status Card -->
                 <Frame Grid.Row="3" 
                        Margin="20,16,20,0" 
@@ -489,21 +474,21 @@
                        HasShadow="False"
                        Background="White"
                        IsClippedToBounds="True">
-                    
+
                     <!-- Enhanced shadow effect -->
                     <Frame.Shadow>
                         <Shadow Brush="#15000000"
                                 Offset="0,3"
                                 Radius="12" />
                     </Frame.Shadow>
-                    
+
                     <Grid Padding="24">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        
+
                         <!-- Section Header -->
                         <Label Grid.Row="0"
                                Text="PLANT HEALTH" 
@@ -511,7 +496,7 @@
                                FontAttributes="Bold"
                                TextColor="#5A7854"
                                CharacterSpacing="0.8" />
-                        
+
                         <!-- Enhanced Health Status Card -->
                         <Frame Grid.Row="1" 
                                x:Name="HealthStatusFrame"
@@ -526,7 +511,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                
+
                                 <!-- Enhanced Health Status Icon with Circle Background -->
                                 <Frame Grid.Column="0"
                                        HeightRequest="52" 
@@ -538,13 +523,13 @@
                                        VerticalOptions="Start"
                                        Margin="0,0,18,0">
                                     <Image x:Name="HealthStatusIcon"
-                                           Source="health_unknown.png"
+                                           Source="magnifying_icon.png"
                                            HeightRequest="26"
                                            WidthRequest="26"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center" />
                                 </Frame>
-                                
+
                                 <!-- Enhanced Health Status Information -->
                                 <StackLayout Grid.Column="1" Spacing="8">
                                     <Label x:Name="HealthStatusTitle"
@@ -552,7 +537,7 @@
                                            FontSize="18" 
                                            FontAttributes="Bold"
                                            TextColor="#315B2F" />
-                                           
+
                                     <Label x:Name="HealthStatusLabel"
                                            Text="Detailed health information will appear here after analysis"
                                            FontSize="15" 
@@ -561,7 +546,7 @@
                                 </StackLayout>
                             </Grid>
                         </Frame>
-                        
+
                         <!-- Disease Details Section with Premium Design -->
                         <StackLayout Grid.Row="2" 
                                      x:Name="DiseaseDetailsStack"
@@ -572,127 +557,98 @@
                         </StackLayout>
                     </Grid>
                 </Frame>
-                
-                <!-- Enhanced Care Tips with Premium Design -->
+
+                <!-- Enhanced Care Tips with Matching Design -->
                 <Frame Grid.Row="4" 
+                       x:Name="ExpertTipsFrame"
                        Margin="20,16,20,60" 
                        Padding="0"
                        CornerRadius="28" 
                        BorderColor="Transparent"
                        HasShadow="False"
+                       Background="White"
                        IsClippedToBounds="True">
-                    
-                    <!-- Enhanced premium gradient background for tips -->
-                    <Frame.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                            <GradientStop Color="#EFF6E7" Offset="0.0" />
-                            <GradientStop Color="#E7F3DF" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Frame.Background>
-                    
+
                     <!-- Enhanced shadow effect -->
                     <Frame.Shadow>
                         <Shadow Brush="#15000000"
                                 Offset="0,3"
                                 Radius="12" />
                     </Frame.Shadow>
-                    
+
                     <Grid Padding="24">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        
-                        <!-- Enhanced Tips Header -->
-                        <StackLayout Grid.Row="0" 
-                                    Orientation="Horizontal" 
-                                    Spacing="14">
-                            <!-- Enhanced Tip Icon with Premium Design -->
-                            <Frame HeightRequest="46" 
-                                  WidthRequest="46"
-                                  CornerRadius="23"
-                                  Padding="0"
-                                  HasShadow="False"
-                                  Background="#D6E8C6"
-                                  Opacity="0.9">
-                                <Image Source="tip_icon.png" 
-                                      HeightRequest="24" 
-                                      WidthRequest="24"
-                                      HorizontalOptions="Center"
-                                      VerticalOptions="Center" />
-                            </Frame>
-                            
-                            <Label Text="Expert Tips"
-                                  FontSize="19"
-                                  FontAttributes="Bold"
-                                  TextColor="#315B2F"
-                                  VerticalOptions="Center"/>
-                        </StackLayout>
-                        
-                        <!-- Enhanced Tips Content with Enhanced Typography -->
-                        <StackLayout Grid.Row="1" 
-                                    Spacing="18" 
-                                    Margin="0,16,0,0">
-                            <!-- Tip Item 1 -->
+
+                        <!-- Section Header -->
+                        <Label Grid.Row="0"
+                               Text="EXPERT TIPS" 
+                               FontSize="13" 
+                               FontAttributes="Bold"
+                               TextColor="#5A7854"
+                               CharacterSpacing="0.8" />
+
+                        <!-- Enhanced Tips Card -->
+                        <Frame Grid.Row="1" 
+                               BackgroundColor="#F7FBF7"
+                               Padding="18"
+                               CornerRadius="18"
+                               Margin="0,14,0,0"
+                               BorderColor="Transparent"
+                               HasShadow="False">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                
+
+                                <!-- Enhanced Tip Icon with Circle Background -->
                                 <Frame Grid.Column="0"
-                                      HeightRequest="30" 
-                                      WidthRequest="30"
-                                      CornerRadius="15"
-                                      HasShadow="False"
-                                      BackgroundColor="#FFFFFF"
-                                      Opacity="0.7"
-                                      VerticalOptions="Start"
-                                      Margin="0,0,16,0">
-                                    <Label Text="1"
-                                          TextColor="#2E7D32"
-                                          FontAttributes="Bold"
-                                          HorizontalOptions="Center"
-                                          VerticalOptions="Center"/>
+                                       HeightRequest="52" 
+                                       WidthRequest="52"
+                                       CornerRadius="26"
+                                       Padding="0"
+                                       HasShadow="False"
+                                       Background="#E8F5E9"
+                                       VerticalOptions="Start"
+                                       Margin="0,0,18,0">
+                                    <Image Source="tips_icon.svg"
+                                           HeightRequest="26"
+                                           WidthRequest="26"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
                                 </Frame>
-                                
-                                <Label Grid.Column="1"
-                                      Text="Take photos in natural, diffused light for the most accurate plant identification results."
-                                      TextColor="#3A5A40"
-                                      FontSize="15"
-                                      LineBreakMode="WordWrap" />
+
+                                <!-- Tips Content -->
+                                <StackLayout Grid.Column="1" Spacing="16">
+                                    <StackLayout Spacing="4">
+                                        <Label Text="Photography Tips"
+                                               FontSize="18" 
+                                               FontAttributes="Bold"
+                                               TextColor="#315B2F" />
+
+                                        <Label Text="Take photos in natural, diffused light for the most accurate plant identification results."
+                                               FontSize="15" 
+                                               LineBreakMode="WordWrap"
+                                               TextColor="#6B796A" />
+                                    </StackLayout>
+
+                                    <StackLayout Spacing="4">
+                                        <Label Text="Feature Multiple Parts"
+                                               FontSize="18" 
+                                               FontAttributes="Bold"
+                                               TextColor="#315B2F" />
+
+                                        <Label Text="Include both leaves and flowers in your photos when available for more accurate identification."
+                                               FontSize="15" 
+                                               LineBreakMode="WordWrap"
+                                               TextColor="#6B796A" />
+                                    </StackLayout>
+                                </StackLayout>
                             </Grid>
-                            
-                            <!-- Tip Item 2 -->
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                
-                                <Frame Grid.Column="0"
-                                      HeightRequest="30" 
-                                      WidthRequest="30"
-                                      CornerRadius="15"
-                                      HasShadow="False"
-                                      BackgroundColor="#FFFFFF"
-                                      Opacity="0.7"
-                                      VerticalOptions="Start"
-                                      Margin="0,0,16,0">
-                                    <Label Text="2"
-                                          TextColor="#2E7D32"
-                                          FontAttributes="Bold"
-                                          HorizontalOptions="Center"
-                                          VerticalOptions="Center"/>
-                                </Frame>
-                                
-                                <Label Grid.Column="1"
-                                      Text="Include both leaves and flowers in your photos when available for more accurate identification."
-                                      TextColor="#3A5A40"
-                                      FontSize="15"
-                                      LineBreakMode="WordWrap" />
-                            </Grid>
-                        </StackLayout>
+                        </Frame>
                     </Grid>
                 </Frame>
             </Grid>
@@ -703,72 +659,162 @@
               Padding="0,0,0,26" 
               BackgroundColor="Transparent"
               ZIndex="2">
+
+            <!-- Improved Container with Frosted Glass Effect -->
             <Frame HorizontalOptions="Center"
                    VerticalOptions="End"
-                   Padding="10,10" 
-                   CornerRadius="38" 
+                   Padding="16,16" 
+                   CornerRadius="42" 
                    HasShadow="False"
                    BorderColor="Transparent"
-                   BackgroundColor="#FFFFFF">
-                
+                   BackgroundColor="#F8FAF8"
+                   Opacity="0.95">
+
                 <!-- Enhanced Button Shadow -->
                 <Frame.Shadow>
-                    <Shadow Brush="#22000000"
+                    <Shadow Brush="#30000000"
                             Offset="0,8"
-                            Radius="16" />
+                            Radius="20" />
                 </Frame.Shadow>
-                
-                <HorizontalStackLayout Spacing="12">
+
+                <HorizontalStackLayout Spacing="16">
                     <!-- Enhanced History Button -->
-                    <Button x:Name="HistoryButton" 
-                            BackgroundColor="#F0F7ED" 
-                            WidthRequest="56" 
-                            HeightRequest="56" 
-                            CornerRadius="28"
-                            Clicked="OnHistoricoButtonClicked">
-                        <Button.Shadow>
-                            <Shadow Brush="#10000000"
-                                    Offset="0,2"
-                                    Radius="4" />
-                        </Button.Shadow>
-                        <Button.ImageSource>
-                            <FileImageSource File="history_icon.svg" />
-                        </Button.ImageSource>
-                    </Button>
-                    
+                    <Grid WidthRequest="60" HeightRequest="76">
+                        <Frame 
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    WidthRequest="56" 
+                    HeightRequest="56" 
+                    CornerRadius="28"
+                    Padding="0"
+                    HasShadow="False"
+                    BorderColor="Transparent">
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#2E7D32" Offset="0.0" />
+                                    <GradientStop Color="#1B5E20" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+
+                            <Grid>
+                                <Ellipse Stroke="#80FFFFFF" 
+                                 StrokeThickness="1.5" 
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 WidthRequest="48"
+                                 HeightRequest="48"/>
+
+                                <Image Source="history_icon.svg"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnHistoricoButtonClicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+
+                        <Label Text="History" 
+                       FontSize="12"
+                       TextColor="#555555"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+                    </Grid>
+
                     <!-- Enhanced Camera Button -->
-                    <Button x:Name="ScanButton"
-                            BackgroundColor="White" 
-                            WidthRequest="70" 
-                            HeightRequest="70" 
-                            CornerRadius="35"
-                            Clicked="OnTakePhotoButtonClicked">
-                        <Button.Shadow>
-                            <Shadow Brush="#30000000"
-                                    Offset="0,4"
-                                    Radius="8" />
-                        </Button.Shadow>
-                        <Button.ImageSource>
-                            <FileImageSource File="scanner_icon.svg" />
-                        </Button.ImageSource>
-                    </Button>
-                    
+                    <Grid WidthRequest="78" HeightRequest="96">
+                        <Frame 
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    WidthRequest="78" 
+                    HeightRequest="78" 
+                    CornerRadius="39"
+                    Padding="0"
+                    HasShadow="False"
+                    BorderColor="Transparent">
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#43A047" Offset="0.0" />
+                                    <GradientStop Color="#2E7D32" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+
+                            <Grid>
+                                <Ellipse Stroke="#80FFFFFF" 
+                                 StrokeThickness="2" 
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 WidthRequest="68"
+                                 HeightRequest="68"/>
+
+                                <Image Source="scanner_icon.svg"
+                               WidthRequest="32"
+                               HeightRequest="32"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnTakePhotoButtonClicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+
+                        <Label Text="Scan" 
+                       FontSize="12"
+                       TextColor="#555555"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+                    </Grid>
+
                     <!-- Enhanced Upload Button -->
-                    <Button x:Name="UploadButton"
-                            BackgroundColor="#F0F7ED" 
-                            WidthRequest="56" 
-                            HeightRequest="56" 
-                            CornerRadius="28"
-                            Clicked="OnUploadButtonClicked">
-                        <Button.Shadow>
-                            <Shadow Brush="#10000000"
-                                    Offset="0,2"
-                                    Radius="4" />
-                        </Button.Shadow>
-                        <Button.ImageSource>
-                            <FileImageSource File="upload_icon.svg" />
-                        </Button.ImageSource>
-                    </Button>
+                    <Grid WidthRequest="60" HeightRequest="76">
+                        <Frame 
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    WidthRequest="56" 
+                    HeightRequest="56" 
+                    CornerRadius="28"
+                    Padding="0"
+                    HasShadow="False"
+                    BorderColor="Transparent">
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#2E7D32" Offset="0.0" />
+                                    <GradientStop Color="#1B5E20" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+
+                            <Grid>
+                                <Ellipse Stroke="#80FFFFFF" 
+                                 StrokeThickness="1.5" 
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 WidthRequest="48"
+                                 HeightRequest="48"/>
+
+                                <Image Source="upload_icon.svg"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnUploadButtonClicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+
+                        <Label Text="Upload" 
+                       FontSize="12"
+                       TextColor="#555555"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+                    </Grid>
                 </HorizontalStackLayout>
             </Frame>
         </Grid>

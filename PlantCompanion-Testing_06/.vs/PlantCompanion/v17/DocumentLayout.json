@@ -1,9 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\LEGION\\Desktop\\PlantCompanion-Testing_BACKUP11\\PlantCompanion-Testing_06\\",
+  "WorkspaceRootPath": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plantcompanion-testing_backup11\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\historicopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\historicopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,12 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HistoricoPage.xaml",
+              "DocumentMoniker": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\HistoricoPage.xaml",
+              "RelativeDocumentMoniker": "PlantCompanion\\HistoricoPage.xaml",
+              "ToolTip": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\HistoricoPage.xaml",
+              "RelativeToolTip": "PlantCompanion\\HistoricoPage.xaml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAArwFsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T11:08:36.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterPage.xaml",
+              "DocumentMoniker": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\RegisterPage.xaml",
+              "RelativeDocumentMoniker": "PlantCompanion\\RegisterPage.xaml",
+              "ToolTip": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\RegisterPage.xaml",
+              "RelativeToolTip": "PlantCompanion\\RegisterPage.xaml",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAkwNAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T11:00:52.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "PlantCompanion\\LoginPage.xaml",
+              "ToolTip": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\LoginPage.xaml",
+              "RelativeToolTip": "PlantCompanion\\LoginPage.xaml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAgwIUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T10:53:01.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml",
+              "RelativeDocumentMoniker": "PlantCompanion\\MainPage.xaml",
+              "ToolTip": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml",
+              "RelativeToolTip": "PlantCompanion\\MainPage.xaml",
+              "ViewState": "AgIAAJsAAAAAAAAAAAApwKMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T08:59:08.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\PlantCompanion-Testing_BACKUP11\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "PlantCompanion\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\LEGION\\Desktop\\PlantCompanion-Testing_BACKUP11\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml.cs",
               "RelativeToolTip": "PlantCompanion\\MainPage.xaml.cs",
-              "ViewState": "AgIAABgCAAAAAAAAAAAiwCMCAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAACEBAAAAAAAAAAAhwCkBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T21:21:57.247Z",
               "EditorCaption": ""

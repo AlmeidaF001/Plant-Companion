@@ -2,84 +2,174 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlantCompanion.LoginPage"
-             BackgroundColor="#F5F5DC">
+             Shell.NavBarIsVisible="False">
 
-    <StackLayout VerticalOptions="StartAndExpand">
-
-        <Image Source="logotipo.png"
-               WidthRequest="250"
-               HeightRequest="200"
-               Margin="0,50,0,50" />
-
-        <HorizontalStackLayout HeightRequest="50"
-                               BackgroundColor="#DBD3C6"
-                               Margin="40,0,40,20">
-
-            <Frame BackgroundColor="Transparent"
-                   BorderColor="Transparent"
-                   WidthRequest="50"
-                   HeightRequest="50"
-                   Padding="10">
-                <Image Source="icon_user.svg"/>
-            </Frame>
-
-            <Entry x:Name="EmailEntry"
-                   Placeholder="Email"
-                   PlaceholderColor="#4A7023"
-                   BackgroundColor="Transparent"
-                   TextColor="#4A7023"
-                   TextChanged="OnEntryTextChanged"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HeightRequest="50"
-                               BackgroundColor="#DBD3C6"
-                               Margin="40,0,40,20">
-
-            <Frame BackgroundColor="Transparent"
-                   BorderColor="Transparent"
-                   WidthRequest="50"
-                   HeightRequest="50"
-                   Padding="10">
-                <Image Source="icon_password.png"/>
-            </Frame>
-
-            <Entry x:Name="PasswordEntry"
-                   Placeholder="Password"
-                   PlaceholderColor="#4A7023"
-                   IsPassword="True"
-                   BackgroundColor="Transparent"
-                   TextColor="#4A7023"
-                   TextChanged="OnEntryTextChanged"/>
-        </HorizontalStackLayout>
-
-        <Label x:Name="WarningLabel"
-               TextColor="Red"
-               IsVisible="False"
-               HorizontalOptions="Center"
-               Margin="20,0,20,20"/>
-
-        <Label Text="Forgot your password?" TextColor="#4A7023" HorizontalOptions="Center">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
-            </Label.GestureRecognizers>
-        </Label>
-
-        <Button Text="Login"
-                BackgroundColor="#4A7023"
-                TextColor="White"
-                CornerRadius="20"
-                Margin="20,40,40,20"
-                FontAttributes="Bold"
-                Clicked="OnLoginButtonClicked"/>
-
-        <Button Text="Register Here"
-                BackgroundColor="#8FBC8F"
-                TextColor="White"
-                CornerRadius="20"
-                Margin="20,0,40,20"
-                FontAttributes="Bold"
-                Clicked="OnRegisterButtonClicked"/>
-
-    </StackLayout>
-
+    <!-- Enhanced Background with Gradient -->
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#F5F5DC" Offset="0.0" />
+                <GradientStop Color="#E9E9CA" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <!-- Subtle pattern overlay -->
+        <Image Source="leaf_pattern.png" 
+               Aspect="AspectFill" 
+               Opacity="0.05"/>
+               
+        <ScrollView>
+            <StackLayout Padding="0,40,0,20" Spacing="16">
+                <!-- Keep the original logo -->
+                <Image Source="logotipo.png"
+                       WidthRequest="250"
+                       HeightRequest="200"
+                       Margin="0,20,0,30" 
+                       HorizontalOptions="Center" />
+                
+                <!-- Welcome text -->
+                <StackLayout Margin="40,0,40,10">
+                    <Label Text="Welcome Back" 
+                           FontSize="26" 
+                           TextColor="#315B2F" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center"/>
+                    <Label Text="Sign in to continue to Plant Companion" 
+                           FontSize="16" 
+                           TextColor="#6B796A"
+                           HorizontalOptions="Center"
+                           Margin="0,5,0,0"/>
+                </StackLayout>
+                
+                <!-- Email Field - Keep original colors but enhance design -->
+                <Frame CornerRadius="25"
+                       HasShadow="False"
+                       BorderColor="Transparent"
+                       BackgroundColor="#DBD3C6"
+                       Margin="40,10,40,0"
+                       Padding="0"
+                       HeightRequest="50">
+                    <HorizontalStackLayout>
+                        <Frame BackgroundColor="#4A7023"
+                               BorderColor="Transparent"
+                               WidthRequest="50"
+                               HeightRequest="50"
+                               CornerRadius="25"
+                               Padding="0"
+                               Margin="0,0,0,0">
+                            <Image Source="icon_user.svg"
+                                   HeightRequest="24"
+                                   WidthRequest="24"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Frame>
+                        <Entry x:Name="EmailEntry"
+                               Placeholder="Email"
+                               PlaceholderColor="#4A7023"
+                               TextColor="#4A7023"
+                               BackgroundColor="Transparent"
+                               VerticalOptions="Center"
+                               Margin="10,0,10,0"
+                               WidthRequest="240"
+                               TextChanged="OnEntryTextChanged"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                
+                <!-- Password Field - Keep original colors but enhance design -->
+                <Frame CornerRadius="25"
+                       HasShadow="False"
+                       BorderColor="Transparent"
+                       BackgroundColor="#DBD3C6"
+                       Margin="40,10,40,0"
+                       Padding="0"
+                       HeightRequest="50">
+                    <HorizontalStackLayout>
+                        <Frame BackgroundColor="#4A7023"
+                               BorderColor="Transparent"
+                               WidthRequest="50"
+                               HeightRequest="50"
+                               CornerRadius="25"
+                               Padding="0"
+                               Margin="0,0,0,0">
+                            <Image Source="icon_password.png"
+                                   HeightRequest="24"
+                                   WidthRequest="24"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Frame>
+                        <Entry x:Name="PasswordEntry"
+                               Placeholder="Password"
+                               PlaceholderColor="#4A7023"
+                               IsPassword="True"
+                               TextColor="#4A7023"
+                               BackgroundColor="Transparent"
+                               VerticalOptions="Center"
+                               Margin="10,0,10,0"
+                               WidthRequest="240"
+                               TextChanged="OnEntryTextChanged"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                
+                <!-- Warning Label -->
+                <Label x:Name="WarningLabel"
+                       TextColor="#D32F2F"
+                       IsVisible="False"
+                       HorizontalOptions="Center"
+                       Margin="40,5,40,0"/>
+                
+                <!-- Forgot Password Link with better placement -->
+                <Label Text="Forgot your password?"
+                       TextColor="#4A7023"
+                       FontSize="14" 
+                       HorizontalOptions="Center"
+                       Margin="0,5,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                
+                <!-- Enhanced Login Button with shadow -->
+                <Frame CornerRadius="25"
+                       HasShadow="False"
+                       Padding="0"
+                       Margin="40,25,40,0"
+                       IsClippedToBounds="True">
+                    <Frame.Shadow>
+                        <Shadow Brush="#40000000"
+                                Offset="0,4"
+                                Radius="12" />
+                    </Frame.Shadow>
+                    <Button Text="Login"
+                            BackgroundColor="#4A7023"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            Clicked="OnLoginButtonClicked"/>
+                </Frame>
+                
+                <!-- Enhanced Register Button with shadow -->
+                <Frame CornerRadius="25"
+                       HasShadow="False"
+                       Padding="0"
+                       Margin="40,15,40,0"
+                       IsClippedToBounds="True">
+                    <Frame.Shadow>
+                        <Shadow Brush="#30000000"
+                                Offset="0,4"
+                                Radius="8" />
+                    </Frame.Shadow>
+                    <Button Text="Register Here"
+                            BackgroundColor="#8FBC8F"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            Clicked="OnRegisterButtonClicked"/>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

@@ -19,7 +19,7 @@ namespace PlantCompanion
 {
     public partial class MainPage : ContentPage
     {
-        private readonly string plantIdApiKey = "UXUnq8Jze9sG9VdzQVauJdDe9XSoCbQ2eAHP1fVBEf5nxGCYYD";
+        private readonly string plantIdApiKey = "Ozdmc0y4aG0lO0W7jpM0HCBASSM8EFHSfjsDYf61qh8UMwBgH9";
         private readonly string plantIdIdentifyUrl = "https://api.plant.id/v2/identify";
         private readonly string plantIdHealthUrl = "https://api.plant.id/v2/health_assessment";
         private FirebaseClient _firebaseClient;
@@ -67,6 +67,17 @@ namespace PlantCompanion
             if (photo != null)
             {
                 var stream = await photo.OpenReadAsync();
+                
+                // Hide Expert Tips section
+                ExpertTipsFrame.IsVisible = false;
+                
+                // Ensure the health status icon is visible and has the correct image
+                HealthStatusIcon.Source = "magnifying_icon.png";
+                HealthStatusIcon.IsVisible = true;
+                
+                HealthStatusTitle.Text = "Analyzing plant...";
+                HealthStatusLabel.Text = "Please wait while we process your image";
+                
                 await IdentifyPlant(stream);
             }
         }
@@ -78,6 +89,15 @@ namespace PlantCompanion
             if (fileResult != null)
             {
                 var stream = await fileResult.OpenReadAsync();
+                
+                // Change the Plant Health icon to magnifying glass SVG before analysis starts
+                HealthStatusIcon.Source = "magnifying_icon.svg";
+                HealthStatusTitle.Text = "Analyzing plant...";
+                HealthStatusLabel.Text = "Please wait while we process your image";
+                
+                // Hide Expert Tips section
+                ExpertTipsFrame.IsVisible = false;
+                
                 await IdentifyPlant(stream);
             }
         }
@@ -211,7 +231,7 @@ namespace PlantCompanion
                 if (healthInfo.HealthAssessment.IsHealthy)
                 {
                     UpdateHealthStatusDisplay("healthy", $"Plant appears healthy! (Confidence: {healthInfo.HealthAssessment.IsHealthyProbability:P2})");
-                    return $"✅ Plant appears healthy! (Confidence: {healthInfo.HealthAssessment.IsHealthyProbability:P2})";
+                    return $"✅ Plant appears healthy! ";
                 }
 
                 if (healthInfo.HealthAssessment.Diseases != null && healthInfo.HealthAssessment.Diseases.Count > 0)
@@ -240,36 +260,40 @@ namespace PlantCompanion
         private void UpdateHealthStatusDisplay(string status, string message, List<DiseaseDetected> diseases = null)
         {
             Device.BeginInvokeOnMainThread(() => {
-                // Update the health status text
-                HealthStatusLabel.Text = message;
-
-                // Set the appropriate color and icon based on status
+                // Always use magnifying icon, regardless of status
+                HealthStatusIcon.Source = "magnifying_icon.png";
+                HealthStatusIcon.IsVisible = true;
+                
+                // Set the appropriate background color and text based on status
                 switch (status.ToLower())
                 {
                     case "healthy":
                         HealthStatusFrame.BackgroundColor = Color.FromHex("#E8F5E9");
-                        HealthStatusIcon.Source = "health_good.png"; // Replace with your healthy icon
+                        HealthStatusTitle.Text = "Plant is Healthy";
                         break;
 
                     case "unhealthy":
                         HealthStatusFrame.BackgroundColor = Color.FromHex("#FFEBEE");
-                        HealthStatusIcon.Source = "health_warning.png"; // Replace with your warning icon
+                        HealthStatusTitle.Text = "Plant Needs Attention";
                         break;
 
                     case "error":
                         HealthStatusFrame.BackgroundColor = Color.FromHex("#FFEBEE");
-                        HealthStatusIcon.Source = "error_icon.png"; // Replace with your error icon
+                        HealthStatusTitle.Text = "Analysis Error";
                         break;
 
                     default: // unknown
                         HealthStatusFrame.BackgroundColor = Color.FromHex("#F5F5F5");
-                        HealthStatusIcon.Source = "health_unknown.png"; // Replace with your unknown icon
+                        HealthStatusTitle.Text = "Analyzing Plant";
                         break;
                 }
+                
+                // Update the health status text
+                HealthStatusLabel.Text = message;
 
-                // Display disease details if available
+                // Rest of your code remains the same
                 DiseaseDetailsStack.Children.Clear();
-
+                
                 if (diseases != null && diseases.Any())
                 {
                     DiseaseDetailsStack.IsVisible = true;

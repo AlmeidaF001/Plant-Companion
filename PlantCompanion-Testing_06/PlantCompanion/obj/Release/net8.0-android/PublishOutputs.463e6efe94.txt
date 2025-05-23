@@ -1,0 +1,4 @@
+C:\Plant-Companion\PlantCompanion-Testing_06\PlantCompanion\bin\Release\net8.0-android\publish\com.companyname.plantcompanion-Signed.aab
+C:\Plant-Companion\PlantCompanion-Testing_06\PlantCompanion\bin\Release\net8.0-android\publish\com.companyname.plantcompanion.aab
+C:\Plant-Companion\PlantCompanion-Testing_06\PlantCompanion\bin\Release\net8.0-android\publish\com.companyname.plantcompanion-Signed.apk
+C:\Plant-Companion\PlantCompanion-Testing_06\PlantCompanion\bin\Release\net8.0-android\publish\_Microsoft.Android.Resource.Designer.dll
