@@ -3,198 +3,229 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlantCompanion.HistoricoPage"
              Title="Plant History"
-             Shell.NavBarIsVisible="True"
-             BackgroundColor="#F5F5DC">
+             Shell.NavBarIsVisible="True">
 
     <Grid>
-        <!-- Background with gradient -->
+        <!-- Refined soft gradient background -->
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#F5F5DC" Offset="0.0" />
-                <GradientStop Color="#E9E9CA" Offset="1.0" />
+                <GradientStop Color="#F8F7ED" Offset="0.0" />
+                <GradientStop Color="#EAE9D8" Offset="1.0" />
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!-- Subtle pattern overlay -->
+        <!-- More subtle pattern overlay -->
         <Image Source="leaf_pattern.png" 
                Aspect="AspectFill" 
                Opacity="0.05"/>
 
-        <StackLayout Padding="16,20">
-            <!-- Header with shadow effect -->
-            <Frame BackgroundColor="#F9F9F0"
-                   Padding="16"
-                   CornerRadius="15"
-                   Margin="0,0,0,16"
-                   HasShadow="False"
-                   BorderColor="Transparent">
-                <Frame.Shadow>
-                    <Shadow Brush="#30000000"
-                            Offset="0,4"
-                            Radius="8" />
-                </Frame.Shadow>
+        <!-- Content layer with improved refresh handling -->
+        <RefreshView x:Name="refreshView" 
+                     RefreshColor="#4A7023"
+                     Refreshing="OnRefreshing">
+            <ScrollView>
+                <StackLayout Padding="16,20" Spacing="20">
+                    <!-- Enhanced header with improved design -->
+                    <Frame BackgroundColor="#FAFAF2"
+                           Padding="16"
+                           CornerRadius="24"
+                           HasShadow="False"
+                           BorderColor="Transparent"
+                           Margin="2,4">
+                        <Frame.Shadow>
+                            <Shadow Brush="#30000000"
+                                    Offset="0,3"
+                                    Radius="12" />
+                        </Frame.Shadow>
+                        
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.98" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
 
-                    <!-- Icon -->
-                    <Frame Grid.Column="0"
-                           BackgroundColor="#4A7023"
-                           WidthRequest="42"
-                           HeightRequest="42"
-                           CornerRadius="21"
-                           Padding="0"
-                           Margin="0,0,16,0">
-                        <Image Source="history_icon.svg"
-                               HeightRequest="22"
-                               WidthRequest="22"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                            <!-- Improved Icon with better shadow -->
+                            <Frame Grid.Column="0"
+                                   BackgroundColor="#4A7023"
+                                   WidthRequest="52"
+                                   HeightRequest="52"
+                                   CornerRadius="26"
+                                   Padding="0"
+                                   Margin="0,0,16,0"
+                                   BorderColor="#5A8033">
+                                <Frame.Shadow>
+                                    <Shadow Brush="#40000000"
+                                            Offset="0,3"
+                                            Radius="6" />
+                                </Frame.Shadow>
+                                <Image Source="history_icon.png"
+                                       HeightRequest="26"
+                                       WidthRequest="26"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Frame>
+
+                            <!-- Enhanced Header text with better typography -->
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                                <Label Text="Plant History" 
+                                       FontSize="26" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#315B2F"/>
+                                <Label Text="Your identified plants" 
+                                       FontSize="16" 
+                                       TextColor="#6B796A"/>
+                            </StackLayout>
+                        </Grid>
                     </Frame>
 
-                    <!-- Header text -->
-                    <StackLayout Grid.Column="1" VerticalOptions="Center">
-                        <Label Text="Plant History" 
-                               FontSize="22" 
-                               FontAttributes="Bold" 
-                               TextColor="#315B2F"/>
-                        <Label Text="Your identified plants" 
-                               FontSize="14" 
-                               TextColor="#6B796A"/>
-                    </StackLayout>
-                </Grid>
-            </Frame>
+                    <!-- Improved Search Bar -->
+                    <Frame BackgroundColor="White"
+                           CornerRadius="20"
+                           Padding="4"
+                           HasShadow="False"
+                           BorderColor="#E0E0E0"
+                           Margin="2,0">
+                        <Grid ColumnSpacing="12" Padding="16,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0"
+                                   Source="search_icon.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   VerticalOptions="Center"
+                                   Opacity="0.7"/>
+                            <Entry Grid.Column="1"
+                                   Placeholder="Search plants..."
+                                   PlaceholderColor="#AAAAAA"
+                                   TextColor="#333333"
+                                   x:Name="SearchEntry"
+                                   TextChanged="OnSearchTextChanged"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"
+                                   FontSize="16"
+                                   Margin="0,10"/>
+                        </Grid>
+                    </Frame>
 
-            <!-- Enhanced CollectionView -->
-            <CollectionView x:Name="PlantsCollectionView"
-                            Margin="0,5"
-                            EmptyView="No plants in history. Scan some plants to see them here!">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Margin="0,8"
-                               Padding="0"
-                               CornerRadius="18"
-                               HasShadow="False"
-                               BorderColor="Transparent"
-                               BackgroundColor="White">
-                            <Frame.Shadow>
-                                <Shadow Brush="#20000000"
-                                        Offset="0,3"
-                                        Radius="6" />
-                            </Frame.Shadow>
+                    <!-- Simplified CollectionView with minimal information -->
+                    <CollectionView x:Name="PlantsCollectionView"
+                                    EmptyView="{Binding Source={x:Reference emptyStateView}}"
+                                    SelectionMode="None"
+                                    Margin="0,5">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0"
+                                       CornerRadius="18"
+                                       HasShadow="False"
+                                       BorderColor="Transparent"
+                                       BackgroundColor="White"
+                                       IsClippedToBounds="True"
+                                       Margin="2,2,2,8">
+                                    <Frame.Shadow>
+                                        <Shadow Brush="#25000000"
+                                                Offset="0,4"
+                                                Radius="12" />
+                                    </Frame.Shadow>
 
-                            <Grid Padding="0" RowSpacing="0">
-                                <!-- Enhanced Plant Image with gradient overlay -->
-                                <Frame Grid.Row="0" 
-                                       Padding="0"
-                                       HeightRequest="180"
-                                       IsClippedToBounds="True">
-                                    <Grid>
-                                        <Image Source="{Binding UserImageUrl}" 
-                                               Aspect="AspectFill"
-                                               HeightRequest="180"/>
+                                    <Grid RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
 
-                                        <!-- Improved gradient overlay for better text contrast -->
-                                        <BoxView Opacity="0.5">
-                                            <BoxView.Background>
-                                                <LinearGradientBrush StartPoint="0,0.7" EndPoint="0,1.0">
-                                                    <GradientStop Color="Transparent" Offset="0.0" />
-                                                    <GradientStop Color="#000000" Offset="1.0" />
-                                                </LinearGradientBrush>
-                                            </BoxView.Background>
-                                        </BoxView>
+                                        <!-- Plant Image (Rectangular) -->
+                                        <Grid Grid.Row="0" 
+                                              Margin="0"
+                                              HeightRequest="200">
+                                            <!-- Image loading indicator -->
+                                            <ActivityIndicator IsRunning="{Binding IsImageLoading, FallbackValue=True}"
+                                                               HeightRequest="32"
+                                                               WidthRequest="32"
+                                                               Color="#4A7023"
+                                                               VerticalOptions="Center"
+                                                               HorizontalOptions="Center"/>
 
-                                        <!-- Plant name overlaid on image - Enhanced position -->
-                                        <Label Text="{Binding Name}" 
-                                               FontSize="20" 
-                                               FontAttributes="Bold"
-                                               TextColor="White"
-                                               VerticalOptions="End"
-                                               Margin="16,0,0,16"/>
+                                            <!-- Background for image -->
+                                            <BoxView Color="#F0F0E6" HeightRequest="200"/>
+
+                                            <!-- Rectangular image -->
+                                            <Image Source="{Binding UserImageUrl}" 
+                                                   Aspect="AspectFill"
+                                                   HeightRequest="200"/>
+
+                                            <!-- Delete button (circle with icon) -->
+                                            <Button BackgroundColor="#D32F2F"
+                                                    HeightRequest="36"
+                                                    WidthRequest="36"
+                                                    CornerRadius="18"
+                                                    Padding="0"
+                                                    HorizontalOptions="End"
+                                                    VerticalOptions="Start"
+                                                    Margin="0,12,12,0"
+                                                    ImageSource="delete_button.svg"
+                                                    CommandParameter="{Binding .}"
+                                                    Clicked="OnDeleteButtonClicked" />
+
+                                            <!-- Gradient overlay for text -->
+                                            <BoxView>
+                                                <BoxView.Background>
+                                                    <LinearGradientBrush StartPoint="0,0.4" EndPoint="0,1.0">
+                                                        <GradientStop Color="Transparent" Offset="0.0" />
+                                                        <GradientStop Color="#AA000000" Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </BoxView.Background>
+                                            </BoxView>
+
+                                            <!-- Plant name only -->
+                                            <Label Text="{Binding Name}" 
+                                                   FontSize="22" 
+                                                   FontAttributes="Bold"
+                                                   TextColor="White"
+                                                   VerticalOptions="End"
+                                                   Margin="16,0,16,16"/>
+                                        </Grid>
+
+                                        <!-- View Details Button Only -->
+                                        <Button Grid.Row="1"
+                                                Text="View Details"
+                                                BackgroundColor="#EBF0E7"
+                                                TextColor="#4A7023"
+                                                FontSize="16"
+                                                FontAttributes="Bold"
+                                                HeightRequest="48"
+                                                Margin="0"
+                                                Padding="0"
+                                                CommandParameter="{Binding .}"
+                                                Clicked="OnViewDetailsClicked">
+                                            <Button.Shadow>
+                                                <Shadow Brush="#20000000"
+                                                        Offset="0,2"
+                                                        Radius="4"/>
+                                            </Button.Shadow>
+                                        </Button>
                                     </Grid>
                                 </Frame>
-
-                                <!-- Content area -->
-                                <Grid Grid.Row="1" Padding="16" RowSpacing="12">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-
-                                    <!-- Health status with colored indicator -->
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-
-                                        <Frame Grid.Column="0"
-                                               WidthRequest="8"
-                                               HeightRequest="24"
-                                               CornerRadius="4"
-                                               Padding="0"
-                                               Margin="0,0,12,0">
-                                            <Frame.Background>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                    <GradientStop Color="{Binding HealthStatusColor, FallbackValue=#4A7023}" Offset="0.0" />
-                                                    <GradientStop Color="{Binding HealthStatusColor, FallbackValue=#4A7023}" Offset="1.0" />
-                                                </LinearGradientBrush>
-                                            </Frame.Background>
-                                        </Frame>
-
-                                        <Label Grid.Column="1"
-                                               Text="{Binding HealthStatus}"
-                                               TextColor="#333333"
-                                               FontSize="16"
-                                               VerticalOptions="Center"/>
-                                    </Grid>
-
-                                    <!-- Date and time row -->
-                                    <Grid Grid.Row="1">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-
-                                        <Image Grid.Column="0"
-                                               Source="calendar_icon.png"
-                                               WidthRequest="16"
-                                               HeightRequest="16"
-                                               Opacity="0.7"
-                                               Margin="0,0,12,0"
-                                               VerticalOptions="Center"/>
-
-                                        <Label Grid.Column="1"
-                                               Text="{Binding DateIdentified, StringFormat='{0:MMM dd, yyyy}'}"
-                                               TextColor="#666666"
-                                               FontSize="14"
-                                               VerticalOptions="Center"/>
-                                    </Grid>
-
-                                    <!-- Delete button only -->
-                                    <Button Grid.Row="2"
-                                            Text="Delete"
-                                            BackgroundColor="#FFEBEE"
-                                            TextColor="#D32F2F"
-                                            FontSize="14"
-                                            CornerRadius="20"
-                                            HeightRequest="40"
-                                            WidthRequest="90"
-                                            Padding="0"
-                                            HorizontalOptions="End"
-                                            Margin="0,8,0,0"
-                                            CommandParameter="{Binding .}"
-                                            Clicked="OnDeleteButtonClicked"/>
-                                </Grid>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
     </Grid>
 </ContentPage>

@@ -30,6 +30,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable\logotipo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\searchweather.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\tips_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\wind.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\delete_button.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\history_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\home.png
@@ -42,6 +43,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\scanner_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\scanner_icon_black.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\tempo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\upload_icon.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\delete_button.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\history_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\home.png
@@ -54,6 +56,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\scanner_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\scanner_icon_black.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\tempo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\upload_icon.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\delete_button.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\history_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\home.png
@@ -66,6 +69,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\scanner_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\scanner_icon_black.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\tempo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\upload_icon.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\delete_button.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\history_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\home.png
@@ -78,6 +82,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\scanner_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\scanner_icon_black.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\tempo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\upload_icon.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\delete_button.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\history_icon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\home.png

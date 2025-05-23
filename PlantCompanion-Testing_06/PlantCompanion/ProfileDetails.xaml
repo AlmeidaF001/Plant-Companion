@@ -2,96 +2,331 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlantCompanion.ProfileDetails"
-             BackgroundColor="White">
+             Title="Profile Details"
+             Shell.NavBarIsVisible="True">
 
-    <ScrollView>
-        <StackLayout >
+    <Grid>
+        <!-- Background with subtle pattern -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#F8F7ED" Offset="0.0" />
+                <GradientStop Color="#EAE9D8" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
 
-            <!-- Header -->
-            <Grid BackgroundColor="#FF8A80" HeightRequest="180">
-                <!-- Moldura circular para a imagem -->
-                <Frame WidthRequest="120" HeightRequest="120"
-                       BackgroundColor="White"
-                       CornerRadius="60"
-                       Padding="0"
-                       HasShadow="True"
-                       HorizontalOptions="Center"
-                       VerticalOptions="End"
-                       Margin="0,0,0,-15">
+        <!-- Background pattern -->
+        <Image Source="leaf_pattern.png" 
+               Aspect="AspectFill" 
+               Opacity="0.05"/>
+
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <!-- Enhanced Header -->
+                <Frame HeightRequest="220" 
+                       Padding="0" 
+                       HasShadow="False"
+                       IsClippedToBounds="True"
+                       CornerRadius="0">
                     <Grid>
-                        <!-- Imagem de perfil -->
-                        <Image x:Name="profileImage"
-                               Source="profile_placeholder.png"
-                               WidthRequest="120"
-                               HeightRequest="120"
-                               Aspect="AspectFill"/>
+                        <!-- Gradient background -->
+                        <Rectangle Fill="#4A7023" HeightRequest="220" />
+                        <Rectangle HeightRequest="220">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#4A7023" Offset="0.0" />
+                                    <GradientStop Color="#5C8C2C" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
 
-                        <!-- Ícone da câmera no centro -->
-                        <ImageButton Source="cam_icon.png"
-                                     WidthRequest="50"
-                                     HeightRequest="50"
-                                     BackgroundColor="Transparent"
-                                     HorizontalOptions="Center"
-                                     VerticalOptions="Center"
-                                     />
+                        <!-- Decorative elements -->
+                        <Image Source="profile_header_leaves.png" 
+                               Aspect="AspectFill" 
+                               Opacity="0.15"/>
+
+                        <!-- Profile Picture Container -->
+                        <Frame WidthRequest="140" 
+                               HeightRequest="140"
+                               BackgroundColor="White"
+                               CornerRadius="70"
+                               Padding="5"
+                               HasShadow="True"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               Margin="0,0,0,-60">
+                            <Frame.Shadow>
+                                <Shadow Brush="#40000000"
+                                        Offset="0,4"
+                                        Radius="12"/>
+                            </Frame.Shadow>
+
+                            <Grid>
+                                <!-- Profile Image -->
+                                <Frame CornerRadius="65" 
+                                       IsClippedToBounds="True"
+                                       Padding="0"
+                                       HasShadow="False">
+                                    <Image x:Name="profileImage"
+                                           Source="profile_placeholder.png"
+                                           Aspect="AspectFill"/>
+                                </Frame>
+
+                                <!-- Camera button with improved design -->
+                                <Frame BackgroundColor="#4A7023"
+                                       WidthRequest="46" 
+                                       HeightRequest="46"
+                                       CornerRadius="23"
+                                       Padding="0"
+                                       HasShadow="True"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="End"
+                                       Margin="0,0,5,5">
+                                    <Frame.Shadow>
+                                        <Shadow Brush="#40000000"
+                                                Offset="0,2"
+                                                Radius="4"/>
+                                    </Frame.Shadow>
+                                    <ImageButton Source="cam_icon.png"
+                                                 WidthRequest="24"
+                                                 HeightRequest="24"
+                                                 BackgroundColor="Transparent"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center"
+                                                 Clicked="OnCameraButtonClicked"/>
+                                </Frame>
+                            </Grid>
+                        </Frame>
                     </Grid>
                 </Frame>
-            </Grid>
 
-            <Label Text="Mudar Imagem de Perfil" 
-                   HorizontalOptions="Center"
-                   FontSize="14"
-                   Margin="5"/>
+                <!-- Profile Text -->
+                <Label Text="Edit Your Profile" 
+                       HorizontalOptions="Center"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#315B2F"
+                       Margin="0,70,0,5"/>
 
-            <!-- Campos de Entrada (Estilizados) -->
-            <StackLayout WidthRequest="300" HorizontalOptions="Center">
+                <Label Text="Update your information" 
+                       HorizontalOptions="Center"
+                       FontSize="16"
+                       TextColor="#6B796A"
+                       Margin="0,0,0,20"/>
 
-                <Frame CornerRadius="25" Padding="10" HasShadow="False" BorderColor="LightGray">
-                    <Entry x:Name="entryName"
-                           Placeholder="Nome Utilizador"
-                           FontSize="14"/>
-                </Frame>
+                <!-- Improved Form Fields -->
+                <StackLayout Spacing="16" Padding="24,0">
+                    <!-- Name Field -->
+                    <Label Text="Name" 
+                           FontSize="14" 
+                           TextColor="#315B2F"
+                           FontAttributes="Bold"
+                           Margin="15,0,0,0"/>
+                    <Frame CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent"
+                           BackgroundColor="White"
+                           HeightRequest="56">
+                        <Frame.Shadow>
+                            <Shadow Brush="#20000000"
+                                    Offset="0,2"
+                                    Radius="4"/>
+                        </Frame.Shadow>
+                        <Grid ColumnDefinitions="Auto,*" Padding="15,0">
+                            <Image Grid.Column="0"
+                                   Source="user_icon.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Opacity="0.6"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,10,0"/>
+                            <Entry Grid.Column="1"
+                                   x:Name="entryName"
+                                   Placeholder="Your name"
+                                   PlaceholderColor="#AAAAAA"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
 
-                <Frame CornerRadius="25" Padding="10" HasShadow="False" BorderColor="LightGray">
-                    <Entry x:Name="entryEmail"
-                           Placeholder="E-mail"
-                           FontSize="14"
-                           Keyboard="Email"/>
-                </Frame>
+                    <!-- Email Field -->
+                    <Label Text="Email" 
+                           FontSize="14" 
+                           TextColor="#315B2F"
+                           FontAttributes="Bold"
+                           Margin="15,0,0,0"/>
+                    <Frame CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent"
+                           BackgroundColor="White"
+                           HeightRequest="56">
+                        <Frame.Shadow>
+                            <Shadow Brush="#20000000"
+                                    Offset="0,2"
+                                    Radius="4"/>
+                        </Frame.Shadow>
+                        <Grid ColumnDefinitions="Auto,*" Padding="15,0">
+                            <Image Grid.Column="0"
+                                   Source="email_icon.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Opacity="0.6"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,10,0"/>
+                            <Entry Grid.Column="1"
+                                   x:Name="entryEmail"
+                                   Placeholder="your.email@example.com"
+                                   PlaceholderColor="#AAAAAA"
+                                   FontSize="16"
+                                   Keyboard="Email"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
 
-                <Frame CornerRadius="25" Padding="10" HasShadow="False" BorderColor="LightGray">
-                    <Entry x:Name="entryPhone"
-                           Placeholder="Número de Telemóvel"
-                           FontSize="14"
-                           Keyboard="Telephone"/>
-                </Frame>
+                    <!-- Phone Field -->
+                    <Label Text="Phone Number" 
+                           FontSize="14" 
+                           TextColor="#315B2F"
+                           FontAttributes="Bold"
+                           Margin="15,0,0,0"/>
+                    <Frame CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent"
+                           BackgroundColor="White"
+                           HeightRequest="56">
+                        <Frame.Shadow>
+                            <Shadow Brush="#20000000"
+                                    Offset="0,2"
+                                    Radius="4"/>
+                        </Frame.Shadow>
+                        <Grid ColumnDefinitions="Auto,*" Padding="15,0">
+                            <Image Grid.Column="0"
+                                   Source="phone_icon.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Opacity="0.6"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,10,0"/>
+                            <Entry Grid.Column="1"
+                                   x:Name="entryPhone"
+                                   Placeholder="Your phone number"
+                                   PlaceholderColor="#AAAAAA"
+                                   FontSize="16"
+                                   Keyboard="Telephone"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
 
-                <Frame CornerRadius="25" Padding="10" HasShadow="False" BorderColor="LightGray">
-                    <Entry x:Name="entryPassword"
-                           Placeholder="Password"
-                           FontSize="14"
-                           IsPassword="True"/>
-                </Frame>
+                    <!-- Password Field -->
+                    <Label Text="Password" 
+                           FontSize="14" 
+                           TextColor="#315B2F"
+                           FontAttributes="Bold"
+                           Margin="15,0,0,0"/>
+                    <Frame CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent"
+                           BackgroundColor="White"
+                           HeightRequest="56">
+                        <Frame.Shadow>
+                            <Shadow Brush="#20000000"
+                                    Offset="0,2"
+                                    Radius="4"/>
+                        </Frame.Shadow>
+                        <Grid ColumnDefinitions="Auto,*,Auto" Padding="15,0">
+                            <Image Grid.Column="0"
+                                   Source="lock_icon.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Opacity="0.6"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,10,0"/>
+                            <Entry Grid.Column="1"
+                                   x:Name="entryPassword"
+                                   Placeholder="Your password"
+                                   PlaceholderColor="#AAAAAA"
+                                   FontSize="16"
+                                   IsPassword="True"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"/>
+                            <ImageButton Grid.Column="2"
+                                         Source="eye_icon.png"
+                                         WidthRequest="24"
+                                         HeightRequest="24"
+                                         BackgroundColor="Transparent"
+                                         Opacity="0.6"
+                                         Clicked="OnTogglePasswordVisibilityClicked"/>
+                        </Grid>
+                    </Frame>
 
-                <Frame CornerRadius="25" Padding="10" HasShadow="False" BorderColor="LightGray">
-                    <Entry x:Name="entryConfirmPassword"
-                           Placeholder="Confirmar Password"
-                           FontSize="14"
-                           IsPassword="True"/>
-                </Frame>
+                    <!-- Confirm Password Field -->
+                    <Label Text="Confirm Password" 
+                           FontSize="14" 
+                           TextColor="#315B2F"
+                           FontAttributes="Bold"
+                           Margin="15,0,0,0"/>
+                    <Frame CornerRadius="16" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent"
+                           BackgroundColor="White"
+                           HeightRequest="56">
+                        <Frame.Shadow>
+                            <Shadow Brush="#20000000"
+                                    Offset="0,2"
+                                    Radius="4"/>
+                        </Frame.Shadow>
+                        <Grid ColumnDefinitions="Auto,*,Auto" Padding="15,0">
+                            <Image Grid.Column="0"
+                                   Source="lock_icon.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   Opacity="0.6"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,10,0"/>
+                            <Entry Grid.Column="1"
+                                   x:Name="entryConfirmPassword"
+                                   Placeholder="Confirm your password"
+                                   PlaceholderColor="#AAAAAA"
+                                   FontSize="16"
+                                   IsPassword="True"
+                                   BackgroundColor="Transparent"
+                                   VerticalOptions="Center"/>
+                            <ImageButton Grid.Column="2"
+                                         Source="eye_icon.png"
+                                         WidthRequest="24"
+                                         HeightRequest="24"
+                                         BackgroundColor="Transparent"
+                                         Opacity="0.6"
+                                         Clicked="OnToggleConfirmPasswordVisibilityClicked"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <!-- Update Button -->
+                <Button Text="Update Profile"
+                        BackgroundColor="#4A7023"
+                        TextColor="White"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        HeightRequest="56"
+                        WidthRequest="220"
+                        HorizontalOptions="Center"
+                        Margin="0,30,0,40">
+                    <Button.Shadow>
+                        <Shadow Brush="#40000000"
+                                Offset="0,3"
+                                Radius="6"/>
+                    </Button.Shadow>
+                </Button>
             </StackLayout>
-
-            <!-- Botão de Atualizar Perfil -->
-            <Button Text="Atualizar Perfil"
-                    BackgroundColor="Black"
-                    TextColor="White"
-                    CornerRadius="25"
-                    HeightRequest="50"
-                    WidthRequest="200"
-                    HorizontalOptions="Center"
-                    
-                    Margin="20"/>
-
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+    </Grid>
 </ContentPage>
