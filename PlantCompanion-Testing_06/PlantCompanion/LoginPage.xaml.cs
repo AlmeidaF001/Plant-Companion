@@ -30,7 +30,10 @@ namespace PlantCompanion
                 var password = PasswordEntry.Text;
                 var userCredential = await _authClient.SignInWithEmailAndPasswordAsync(email, password);
                 WarningLabel.IsVisible = false;
-                await DisplayAlert("Success", "Login bem-sucedido!", "OK");
+                
+                // Removed success alert - unnecessary before navigation
+                // await DisplayAlert("Success", "Login bem-sucedido!", "OK");
+                
                 Application.Current.MainPage = new AppShell(_authClient, _firebaseClient);
             }
             catch (Exception ex)

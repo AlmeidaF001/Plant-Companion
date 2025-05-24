@@ -129,8 +129,8 @@ namespace PlantCompanion
                 var jsonContent = new
                 {
                     images = new[] { $"data:image/jpg;base64,{base64Image}" },
-                    latitude = 49.207, // Use latitude from device if necessary
-                    longitude = 16.608, // Use longitude from device if necessary
+                    latitude = 49.207,
+                    longitude = 16.608,
                     similar_images = true
                 };
 
@@ -139,8 +139,6 @@ namespace PlantCompanion
 
                 var response = await client.SendAsync(request);
                 var result = await response.Content.ReadAsStringAsync();
-
-                await DisplayAlert("Resposta da API", result, "OK"); // Exibir a resposta da API
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -420,15 +418,11 @@ namespace PlantCompanion
                     DefaultImageUrl = defaultImageUrl
                 };
 
-                await DisplayAlert("Debug", "Antes de salvar no Firebase", "OK");
-
                 await _firebaseClient
                     .Child("users")
                     .Child(user.Uid)
                     .Child("plants")
                     .PostAsync(plant);
-
-                await DisplayAlert("Debug", "Depois de salvar no Firebase", "OK");
             }
             else
             {
@@ -516,7 +510,6 @@ namespace PlantCompanion
                 if (location != null)
                 {
                     // Use a localização
-                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
                 }
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -608,7 +601,7 @@ namespace PlantCompanion
         private async void OnProfileMenuItemTapped(object sender, EventArgs e)
         {
             await HideMenu();
-            await Navigation.PushAsync(new ProfileDetails());
+            // await Navigation.PushAsync(new ProfileDetails());
         }
 
         private async void OnWeatherMenuItemTapped(object sender, EventArgs e)
@@ -636,6 +629,30 @@ namespace PlantCompanion
             // Handle settings button click here
             // Implemente aqui a navegação para a página de configurações
             // Por exemplo: Navigation.PushAsync(new SettingsPage());
+        }
+
+        private async void OnLogoutMenuItemTapped(object sender, EventArgs e)
+        {
+            await HideMenu();
+            
+            // Ask for confirmation
+            bool confirm = await DisplayAlert("Logout", "Are you sure you want to log out?", "Yes", "No");
+            
+            if (confirm)
+            {
+                try
+                {
+                    // Sign out the user (using the correct method)
+                    _authClient.SignOut();
+                    
+                    // Navigate to login page
+                    Application.Current.MainPage = new NavigationPage(new LoginPage(_authClient, _firebaseClient));
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", $"Failed to log out: {ex.Message}", "OK");
+                }
+            }
         }
     }
 }

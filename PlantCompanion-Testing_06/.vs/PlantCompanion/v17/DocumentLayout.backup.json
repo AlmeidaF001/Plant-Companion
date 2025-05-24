@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\tempopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\tempopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\tempopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\tempopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\profiledetails.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\profiledetails.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\historicopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\historicopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\historicopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|solutionrelative:plantcompanion\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{94168A76-CD50-4105-AA71-CD4A84A16E74}|PlantCompanion\\PlantCompanion.csproj|c:\\users\\legion\\desktop\\plant-companion\\plantcompanion-testing_06\\plantcompanion\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -34,24 +46,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "TempoPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\TempoPage.xaml.cs",
+              "RelativeDocumentMoniker": "PlantCompanion\\TempoPage.xaml.cs",
+              "ToolTip": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\TempoPage.xaml.cs",
+              "RelativeToolTip": "PlantCompanion\\TempoPage.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T16:17:25.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TempoPage.xaml",
+              "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\TempoPage.xaml",
+              "RelativeDocumentMoniker": "PlantCompanion\\TempoPage.xaml",
+              "ToolTip": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\TempoPage.xaml",
+              "RelativeToolTip": "PlantCompanion\\TempoPage.xaml",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAiwCYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-24T16:10:26.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProfileDetails.xaml",
+              "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\ProfileDetails.xaml",
+              "RelativeDocumentMoniker": "PlantCompanion\\ProfileDetails.xaml",
+              "ToolTip": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\ProfileDetails.xaml",
+              "RelativeToolTip": "PlantCompanion\\ProfileDetails.xaml",
+              "ViewState": "AgIAADwBAAAAAAAAAAAcwEwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T22:34:58.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HistoricoPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\HistoricoPage.xaml.cs",
               "RelativeDocumentMoniker": "PlantCompanion\\HistoricoPage.xaml.cs",
               "ToolTip": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\HistoricoPage.xaml.cs",
               "RelativeToolTip": "PlantCompanion\\HistoricoPage.xaml.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAqwGwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAqwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T22:15:56.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "HistoricoPage.xaml",
               "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\HistoricoPage.xaml",
               "RelativeDocumentMoniker": "PlantCompanion\\HistoricoPage.xaml",
@@ -59,12 +110,11 @@
               "RelativeToolTip": "PlantCompanion\\HistoricoPage.xaml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAiwBUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-23T11:08:36.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T11:08:36.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "RegisterPage.xaml",
               "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\RegisterPage.xaml",
               "RelativeDocumentMoniker": "PlantCompanion\\RegisterPage.xaml",
@@ -76,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "LoginPage.xaml",
               "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\LoginPage.xaml",
               "RelativeDocumentMoniker": "PlantCompanion\\LoginPage.xaml",
@@ -88,25 +138,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml",
               "RelativeDocumentMoniker": "PlantCompanion\\MainPage.xaml",
               "ToolTip": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml",
               "RelativeToolTip": "PlantCompanion\\MainPage.xaml",
-              "ViewState": "AgIAAJsAAAAAAAAAAAApwKMAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAAkwMMAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-23T08:59:08.647Z"
+              "WhenOpened": "2025-05-23T08:59:08.647Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "PlantCompanion\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\MainPage.xaml.cs",
               "RelativeToolTip": "PlantCompanion\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAHwCAAAAAAAAAAAmwIICAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T21:21:57.247Z",
               "EditorCaption": ""

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7p/QF327rqs=",
+  "dgSpecHash": "VxLXgW+H+qk=",
   "success": true,
   "projectFilePath": "C:\\Users\\LEGION\\Desktop\\Plant-Companion\\PlantCompanion-Testing_06\\PlantCompanion\\PlantCompanion.csproj",
   "expectedPackageFiles": [
@@ -151,6 +151,11 @@
     "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.ios.runtime.ios-arm64.net8.0_18.0\\18.0.8324\\microsoft.ios.runtime.ios-arm64.net8.0_18.0.18.0.8324.nupkg.sha512",
     "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.maccatalyst.ref.net8.0_18.0\\18.0.8324\\microsoft.maccatalyst.ref.net8.0_18.0.18.0.8324.nupkg.sha512",
     "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0\\18.0.8324\\microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0.18.0.8324.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.maccatalyst.runtime.maccatalyst-arm64.net8.0_18.0\\18.0.8324\\microsoft.maccatalyst.runtime.maccatalyst-arm64.net8.0_18.0.18.0.8324.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.16\\microsoft.netcore.app.runtime.win-x64.8.0.16.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.16\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.16.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.16\\microsoft.aspnetcore.app.runtime.win-x64.8.0.16.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.16\\microsoft.netcore.app.crossgen2.win-x64.8.0.16.nupkg.sha512",
     "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []

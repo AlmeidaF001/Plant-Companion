@@ -114,6 +114,34 @@ public partial class TempoPage : ContentPage
         LblWind.Text = result.list[0].wind.speed + "km/h";
         //ImgWeatherIcon.Source = result.list[0].weather[0].fullIconUrl;
         ImgWeatherIcon.Source = result.list[0].weather[0].customIcon;
+
+        // Update the plant watering tip based on temperature
+        UpdatePlantTip(LblTemperature.Text);
+    }
+
+    private void UpdatePlantTip(string temperatureText)
+    {
+        if (string.IsNullOrEmpty(temperatureText))
+            return;
+
+        // Extract temperature value from the text (remove °C if present)
+        string tempValue = temperatureText.Replace("°C", "").Replace("ºC", "").Trim();
+
+        if (double.TryParse(tempValue, out double temperature))
+        {
+            if (temperature > 23)
+            {
+                LblWeatherTip.Text = "The current temperature is above 23°C. It's recommended to water your plants to prevent dehydration.";
+            }
+            else
+            {
+                LblWeatherTip.Text = "The current temperature is adequate. Your plants probably don't need additional watering today.";
+            }
+        }
+        else
+        {
+            LblWeatherTip.Text = "Regularly check your plants' soil moisture and water as needed.";
+        }
     }
 
     private async void OnNavigateToMainPageClicked(object sender, EventArgs e)
