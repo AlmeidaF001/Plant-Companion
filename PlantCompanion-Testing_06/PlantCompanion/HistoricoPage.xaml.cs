@@ -114,8 +114,11 @@ namespace PlantCompanion
             
             if (plant != null)
             {
-                // Navigate to plant details page
-                await Shell.Current.GoToAsync($"//plantdetails?id={plant.Key}");
+                // Em vez de navegar, mostre os detalhes diretamente aqui
+                await DisplayAlert(
+                    plant.Name,
+                    $"Nome: {plant.Name}\nEstado de Saúde: {plant.HealthStatus}",
+                    "OK");
             }
         }
 

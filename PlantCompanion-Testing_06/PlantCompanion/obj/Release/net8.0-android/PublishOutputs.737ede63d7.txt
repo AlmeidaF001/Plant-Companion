@@ -1,0 +1,4 @@
+C:\Users\LEGION\Desktop\Plant-Companion\PlantCompanion-Testing_06\output\com.companyname.plantcompanion-Signed.aab
+C:\Users\LEGION\Desktop\Plant-Companion\PlantCompanion-Testing_06\output\com.companyname.plantcompanion.aab
+C:\Users\LEGION\Desktop\Plant-Companion\PlantCompanion-Testing_06\output\com.companyname.plantcompanion-Signed.apk
+C:\Users\LEGION\Desktop\Plant-Companion\PlantCompanion-Testing_06\output\_Microsoft.Android.Resource.Designer.dll

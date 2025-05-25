@@ -17,6 +17,8 @@ namespace PlantCompanion
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(TempoPage), typeof(TempoPage));
             Routing.RegisterRoute(nameof(PerfilPage), typeof(PerfilPage));
+            // Adicione esta linha para registrar a rota plantdetails
+            Routing.RegisterRoute("plantdetails", typeof(PerfilPage)); // Usando PerfilPage para mostrar detalhes
         }
 
         protected override void OnNavigated(ShellNavigatedEventArgs args)
